@@ -1,5 +1,7 @@
 package org.example.Lesson2;
 
+import java.util.ArrayList;
+
 public class File {
     private String name;
     private int sizeInBytes;
@@ -29,5 +31,9 @@ public class File {
             throw new IllegalArgumentException("Size cannot be 0 or negative");
         }else{
         this.sizeInBytes = sizeInBytes;}
+    }
+    public static void printAll(ArrayList files){
+        System.out.println();
+
     }
 }

@@ -3,28 +3,19 @@ package org.example.Lesson2;
 import java.util.Date;
 
 public class Video extends Multimedia {
-   private int height;
-    private int width;
+   private ImageSize imageSize;
 
-    public Video(String name, int sizeInBytes, String fileFormat, String description, Date duration, int height, int width) {
+
+    public Video(String name, int sizeInBytes, String fileFormat, String description, Duration duration, ImageSize imageSize) {
         super(name, sizeInBytes, fileFormat, description, duration);
-        setHeight(height);
-        setWidth(width);
+        setImageSize(imageSize);
     }
 
-    public int getHeight() {
-        return height;
+    public ImageSize getImageSize() {
+        return imageSize;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
+    public void setImageSize(ImageSize imageSize) {
+        this.imageSize = imageSize;
     }
 }

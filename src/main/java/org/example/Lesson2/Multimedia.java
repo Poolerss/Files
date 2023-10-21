@@ -5,7 +5,7 @@ import java.util.Date;
 public class Multimedia extends File{
     private String fileFormat;
     private String description;
-    private Date duration;
+    private Duration duration;
 
     public String getFileFormat() {
         return fileFormat;
@@ -23,15 +23,15 @@ public class Multimedia extends File{
         this.description = description;
     }
 
-    public Date getDuration() {
+    public Duration getDuration() {
         return duration;
     }
 
-    public void setDuration(Date duration) {
+    public void setDuration(Duration duration) {
         this.duration = duration;
     }
 
-    public Multimedia(String name, int sizeInBytes, String fileFormat, String description, Date duration) {
+    public Multimedia(String name, int sizeInBytes, String fileFormat, String description, Duration duration) {
         super(name, sizeInBytes);
         this.fileFormat = fileFormat;
         this.description = description;

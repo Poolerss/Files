@@ -2,14 +2,12 @@ package org.example.Lesson2;
 
 public class Image extends File{
     private String fileFormat;
-    int height;
-    int width;
+    private ImageSize imageSize;
 
     public Image(String name, int sizeInBytes, String fileFormat, int height, int width) {
         super(name, sizeInBytes);
         setFileFormat(fileFormat);
-        setHeight(height);
-        setWidth(width);
+        setImageSize(imageSize);
     }
 
     public String getFileFormat() {
@@ -20,19 +18,11 @@ public class Image extends File{
         this.fileFormat = fileFormat;
     }
 
-    public int getHeight() {
-        return height;
+    public ImageSize getImageSize() {
+        return imageSize;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
+    public void setImageSize(ImageSize imageSize) {
+        this.imageSize = imageSize;
     }
 }
