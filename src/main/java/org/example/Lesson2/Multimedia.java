@@ -12,7 +12,11 @@ public class Multimedia extends File{
     }
 
     public void setFileFormat(String fileFormat) {
-        this.fileFormat = fileFormat;
+        if (!fileFormat.isBlank()) {
+            this.fileFormat = fileFormat;
+        } else {
+            throw new IllegalArgumentException("The file format is incorrect");
+        }
     }
 
     public String getDescription() {
@@ -33,9 +37,9 @@ public class Multimedia extends File{
 
     public Multimedia(String name, int sizeInBytes, String fileFormat, String description, Duration duration) {
         super(name, sizeInBytes);
-        this.fileFormat = fileFormat;
-        this.description = description;
-        this.duration = duration;
+        setFileFormat(fileFormat);
+        setDescription(description);
+        setDuration(duration);
     }
 }
 

@@ -15,7 +15,11 @@ public class Image extends File{
     }
 
     public void setFileFormat(String fileFormat) {
-        this.fileFormat = fileFormat;
+        if (!fileFormat.isBlank()) {
+            this.fileFormat = fileFormat;
+        } else {
+            throw new IllegalArgumentException("The file format is incorrect");
+        }
     }
 
     public ImageSize getImageSize() {
