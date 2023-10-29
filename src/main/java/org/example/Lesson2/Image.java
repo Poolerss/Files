@@ -1,29 +1,23 @@
 package org.example.Lesson2;
 
 public class Image extends File{
-    private String fileFormat;
+
     private ImageSize imageSize;
 
     public Image(String name, int sizeInBytes, String fileFormat, int height, int width) {
-        super(name, sizeInBytes);
-        setFileFormat(fileFormat);
-        setImageSize(imageSize);
+        super(name, sizeInBytes, fileFormat);
+        imageSize = new ImageSize(height, width);
     }
 
-    public String getFileFormat() {
-        return fileFormat;
-    }
-
-    public void setFileFormat(String fileFormat) {
-        if (!fileFormat.isBlank()) {
-            this.fileFormat = fileFormat;
-        } else {
-            throw new IllegalArgumentException("The file format is incorrect");
-        }
-    }
 
     public ImageSize getImageSize() {
         return imageSize;
+    }
+
+    @Override
+    public void print(){
+        super.print();
+        System.out.printf(" %-52s | \n", (getFileFormat() + ", " + imageSize.toString() ));
     }
 
     public void setImageSize(ImageSize imageSize) {

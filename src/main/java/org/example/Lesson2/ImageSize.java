@@ -33,7 +33,8 @@ public class ImageSize {
         }
     }
 
-    public void printSize(){
-        System.out.printf("%ix%i",height, width);
+    @Override
+    public String toString() {
+        return height + "X" + width;
     }
 }

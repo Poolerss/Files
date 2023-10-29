@@ -1,25 +1,12 @@
 package org.example.Lesson2;
 
 public class Docunent extends File {
-    private String fileFormat;
+
     private int numberOfPages;
 
     public Docunent(String name, int sizeInBytes, String fileFormat, int numberOfPages) {
-        super(name, sizeInBytes);
-        setFileFormat(fileFormat);
+        super(name, sizeInBytes, fileFormat);
         setNumberOfPages(numberOfPages);
-    }
-
-    public String getFileFormat() {
-            return fileFormat;
-    }
-
-    public void setFileFormat(String fileFormat) {
-        if (!fileFormat.isBlank()) {
-            this.fileFormat = fileFormat;
-        } else {
-            throw new IllegalArgumentException("The file format is incorrect");
-        }
     }
 
     public int getNumberOfPages() {
@@ -27,9 +14,16 @@ public class Docunent extends File {
     }
 
     public void setNumberOfPages(int numberOfPages) {
-        if (numberOfPages<=0){
+        if (numberOfPages <= 0) {
             throw new IllegalArgumentException("Number of pages cannot be 0 or negative");
         }
         this.numberOfPages = numberOfPages;
+    }
+
+    @Override
+    public void print() {
+        super.print();
+        System.out.printf(" %-52s | \n", (getFileFormat() + ", " + numberOfPages + " pages") );
+
     }
 }

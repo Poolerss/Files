@@ -3,17 +3,17 @@ package org.example.Lesson2;
 import java.sql.SQLOutput;
 
 public class Duration {
-    private byte hours;
-    private byte minutes;
-    private byte seconds;
+    private int hours;
+    private int minutes;
+    private int seconds;
 
-    public Duration(byte hours, byte minutes, byte seconds) {
+    public Duration(int hours, int minutes, int seconds) {
         setHours(hours);
         setMinutes(minutes);
         setSeconds(seconds);
     }
 
-    public void setHours(byte hours) {
+    public void setHours(int hours) {
         if (hours < 0) {
             throw new IllegalArgumentException("incorrect hours input format");
         } else {
@@ -21,7 +21,7 @@ public class Duration {
         }
     }
 
-    public void setMinutes(byte minutes) {
+    public void setMinutes(int minutes) {
         if (minutes < 0 || minutes > 60) {
             throw new IllegalArgumentException("incorrect minutes input format");
         } else {
@@ -29,7 +29,7 @@ public class Duration {
         }
     }
 
-    public void setSeconds(byte seconds) {
+    public void setSeconds(int seconds) {
         if (seconds < 0 || seconds > 60) {
             throw new IllegalArgumentException("incorrect seconds input format");
         } else {
@@ -37,8 +37,13 @@ public class Duration {
         }
     }
 
-    public void printDate(){
-        System.out.printf("%b:%b:%b", hours,minutes,seconds);
-    }
 
+    @Override
+    public String toString() {
+        if (hours != 0) {
+            return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+        } else {
+            return String.format("%02d:%02d", minutes, seconds);
+        }
+    }
 }
