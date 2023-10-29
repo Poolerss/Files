@@ -2,7 +2,7 @@ package org.example.Lesson2;
 
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 import static org.example.Lesson2.File.printAll;
 

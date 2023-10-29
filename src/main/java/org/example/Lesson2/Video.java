@@ -1,6 +1,5 @@
 package org.example.Lesson2;
 
-import java.util.Date;
 
 public class Video extends Multimedia {
    private ImageSize imageSize;

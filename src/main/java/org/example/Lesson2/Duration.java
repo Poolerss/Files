@@ -1,6 +1,5 @@
 package org.example.Lesson2;
 
-import java.sql.SQLOutput;
 
 public class Duration {
     private int hours;
